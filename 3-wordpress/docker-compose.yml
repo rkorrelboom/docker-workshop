@@ -1,0 +1,27 @@
+version: '3'
+
+services:
+
+  wordpress:
+    image: wordpress
+    ports:
+      - 80:80
+    environment:
+      WORDPRESS_DB_PASSWORD: example
+
+  mysql:
+    image: mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: example
+
+#  varnish:
+#    image: million12/varnish
+#    ports:
+#      - [host]:[container]
+#    links:
+#      - [container]:backend-host
+#    volumes:
+#      - [local-path]:[container-path]
+#    environment:
+#      VCL_CONFIG: /data/default.vcl # Location of the varnish VCL configuration
+#      VARNISHD_PARAMS: -a :80 # Varnish runs on this port
